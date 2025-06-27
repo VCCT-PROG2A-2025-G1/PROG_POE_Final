@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:PROG_POE_Final"
              x:Name="chatBubbleControl"
              Height="Auto" Width="Auto">
-
+    
+    <!--Chat Bubble Structure is based on Youtube Video: AngelSix-C# WPF UI Tutorials: 14 - Create Chat Message Bubbles-->
    
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
@@ -43,3 +44,11 @@
         </Border>
     </Grid>
 </UserControl>
+<!--References-->
+<!--Youtube Profile: AngelSix
+    Video Title: C# WPF UI Tutorials: 14 - Create Chat Message Bubbles
+    Year Published: 2017 
+    URL: https://www.youtube.com/watch?v=vaeg0Gwzybw -->
+
+
+

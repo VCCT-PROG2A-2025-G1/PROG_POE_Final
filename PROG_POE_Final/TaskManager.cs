@@ -6,7 +6,7 @@ using PROG_POE_Final.Models;
 
 namespace PROG_POE_Final
 {
-    //Manages list of tasks that including adding, deteling, completing and displaying the list of tasks
+    //Manages list of tasks that including adding, deleting, completing and displaying the list of tasks
     public class TaskManager
     {
         //List that stores tasks
@@ -54,7 +54,7 @@ namespace PROG_POE_Final
                
 
             var sb = new StringBuilder();
-
+            sb.AppendLine("Here's a summary of recent actions:\n");
             //Loop through all tasks and append their details to the string builder
             for (int i = 0; i < tasks.Count; i++)
             {

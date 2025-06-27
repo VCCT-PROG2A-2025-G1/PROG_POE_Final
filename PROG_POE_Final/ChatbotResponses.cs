@@ -37,11 +37,10 @@ namespace PROG_POE
         public QuizManager quizManager = new QuizManager();
         public ActivityLog activityLog = new ActivityLog();
 
-        private Dictionary<string, List<string>> intentKeywords = new Dictionary<string, List<string>>()
+        private Dictionary<string, List<string>> intentKeywor = new Dictionary<string, List<string>>()
         {
-            { "AddTask", new List<string> { "add task", "create task", "new task", "set task", "remind me", "add reminder", "set reminder" } },
-            { "ViewTasks", new List<string> { "show tasks", "view tasks", "list tasks", "my tasks" } },
-            { "CompleteTask", new List<string> { "complete task", "done task", "finish task", "mark task" } },
+            
+            { "CompleteTask", new List<string> { "complete task", "", "finish task", "mark task" } },
             { "DeleteTask", new List<string> { "delete task", "remove task", "discard task" } },
             { "StartQuiz", new List<string> { "start quiz", "take quiz", "begin quiz", "cyber quiz", "quiz game" } },
             { "AnswerQuiz", new List<string> { "answer", "choose", "pick", "select option" } },
@@ -95,7 +94,7 @@ namespace PROG_POE
             StringBuilder bot = new StringBuilder();
 
 
-            if (input.Contains("add task") || input.Contains("set a reminder") || input.Contains("remind me") || input.Contains("create a task") || input.Contains("add a task"))
+            if (input.Contains("add task") || input.Contains("set a reminder") || input.Contains("remind me") || input.Contains("create a task") || input.Contains("add a task") || input.Contains("add reminder") || input.Contains("set task") || input.Contains("create task") || input.Contains("new task") || input.Contains("set reminder"))
             {
                 var (title, reminder) = TaskNLP.ParseTask(input);
                 taskManager.AddTask(title, "", reminder);
@@ -104,14 +103,14 @@ namespace PROG_POE
                 return $"Task added: \"{title}\"" + (reminder.HasValue ? $" with reminder for {reminder.Value:g}" : "") + ".";
             }
 
-            if (input.Contains("show tasks") || input.Contains("view tasks") || input.Contains("list tasks") || input.Contains("my tasks"))
+            if (input.Contains("show tasks") || input.Contains("view tasks") || input.Contains("list tasks") || input.Contains("my tasks") || input.Contains("what have you done"))
             {
                 currentMode = "task";
                 activityLog.AddLog("Viewed tasks.");
                 return taskManager.DisplayTasks();
             }
 
-            if (input.Contains("complete task") || input.Contains("completed my task") || input.Contains("finished a task") || input.Contains("finished my task") || input.Contains("task is completed"))
+            if (input.Contains("complete task") || input.Contains("completed my task") || input.Contains("finished a task") || input.Contains("finished my task") || input.Contains("task is completed") || input.Contains("done task") || input.Contains("finish task") || input.Contains("mark task") || input.Contains("task completed"))
             {
                 currentMode = "task";
                 pendingStatus = "complete";
@@ -126,7 +125,7 @@ namespace PROG_POE
             }
             //------------------------------------------------
             //Quiz commands to trigger starting the quiz
-            if (input.Contains("start quiz") || input.Contains("take quiz") || input.Contains("cyber quiz") || input.Contains("take a quiz"))
+            if (input.Contains("start quiz") || input.Contains("take quiz") || input.Contains("cyber quiz") || input.Contains("take a quiz") || input.Contains("quiz me") || input.Contains("take a test") || input.Contains("test me"))
             {
                 quizManager.RestartQuiz();
                 var q = quizManager.GetCurrentQuestion();
@@ -183,7 +182,7 @@ namespace PROG_POE
 
             //---------------------------------------------------------------------
             // Display activity log if there are existing logs
-            if (input.Contains("show activity log") || input.Contains("what have you done") || input.Contains("show log"))
+            if (input.Contains("show activity log") || input.Contains("my activity") || input.Contains("show log") || input.Contains("my activities"))
             {
                 return activityLog.GetLogSummary();
             }

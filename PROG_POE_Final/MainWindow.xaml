@@ -14,6 +14,9 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
 
+
+
+    <!-- Layout of the chatbot screen in based on JD's Code Lab - WPF UI Designs C# | Chat Application UI Part - 1 | WPF C# (Jd's Code Lab) -->
     <Border CornerRadius="20" Background="WhiteSmoke">
         <Grid>
             <!-- Layout Grid -->
@@ -122,3 +125,9 @@
         </Grid>
     </Border>
 </Window>
+    
+<!--References-->
+<!--Youtube Profile: JD's Code Lab
+    Video Title:  WPF UI Designs C# | Chat Application UI Part - 1 | WPF C# (Jd's Code Lab) 
+    Release Year: 2021
+    URL: https://www.youtube.com/watch?v=qCoB8mqNyzk&t=1165s-->

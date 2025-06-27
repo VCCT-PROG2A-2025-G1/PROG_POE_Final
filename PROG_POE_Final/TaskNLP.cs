@@ -13,6 +13,8 @@ namespace PROG_POE_Final.Utilities
     public static class TaskNLP
     {
         //---------------------------------------------------------------------------------------------------------------------------------------------
+        //Method orignally had issues with setting reminder date, as regex was not implemented correctly at first
+        //Troubleshooted with OpenAI ChatGPT
         //Parses user input to extract the task title and a reminder date,if given
         public static (string title, DateTime? reminder) ParseTask(string input)
         {
@@ -63,4 +65,16 @@ namespace PROG_POE_Final.Utilities
         }
     }
 }
+//References
+
+//Regex Theory
+//Youtube Profile:Program Snippets
+//Video Title: Regular Expression in C#
+//URL: https://www.youtube.com/watch?v=oJINzH5pqa8
+
+//Troubleshooting
+//Corporate Author: OpenAI
+//Website: ChatGpt
+//Weppage: Get answers. Find inspiration. Be more productive.
+//URL: https://openai.com/chatgpt/overview/
 //---------------------------------------------------------------------END OF FILE----------------------------------------------------------
