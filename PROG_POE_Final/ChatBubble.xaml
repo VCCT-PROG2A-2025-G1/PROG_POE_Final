@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="PROG_POE_Final.ChatBubble"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PROG_POE_Final"
+             x:Name="chatBubbleControl"
+             Height="Auto" Width="Auto">
+
+   
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Speech bubble trail for bot -->
+        <Polygon x:Name="BotTrail"
+                 Points="10,10 0,0 0,20"
+                 Fill="#E5E5EA"
+                 VerticalAlignment="Center"
+                 Visibility="Collapsed"/>
+        <!-- Speech bubble trail for user -->
+        <Polygon x:Name="UserTrail"
+                Points="0,10 10,0 10,20"
+                Fill="#3E39C2"
+                VerticalAlignment="Center"
+                Visibility="Collapsed"/>
+       
+            <Border x:Name="BubbleBorder"
+                CornerRadius="15"
+                Padding="10"
+                Background="#E5E5EA"
+                Grid.Column="1"
+                MaxWidth="450">
+           
+            <TextBlock x:Name="MessageText"
+                       Text="Sample message"
+                       TextWrapping="Wrap"
+                       FontSize="14"
+                       Foreground="Black"/>
+            
+        </Border>
+    </Grid>
+</UserControl>

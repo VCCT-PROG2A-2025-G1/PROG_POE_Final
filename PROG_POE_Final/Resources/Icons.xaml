@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Minimize icon -->
+        <DrawingImage x:Key="MinimizeIcon">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="Black">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="0,8,16,2"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+
+    <!-- Maximize icon -->
+    <DrawingImage x:Key="MaximizeIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Geometry>
+                    <RectangleGeometry Rect="2,2,12,12"/>
+                </GeometryDrawing.Geometry>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="2"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Exit icon -->
+        <DrawingImage x:Key="ExitIcon">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="Black">
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <LineGeometry StartPoint="2,2" EndPoint="14,14"/>
+                            <LineGeometry StartPoint="14,2" EndPoint="2,14"/>
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="Black" Thickness="2"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- Send icon -->
+    <DrawingImage x:Key="SendIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="White">
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure StartPoint="2,8" IsClosed="True">
+                            <LineSegment Point="14,2"/>
+                            <LineSegment Point="10,8"/>
+                            <LineSegment Point="14,14"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+</ResourceDictionary>
